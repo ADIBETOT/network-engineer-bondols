@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adib Achmad | Network Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fira Code', monospace;
+        }
+
+        body {
+            background-color: #050811;
+            color: #00ffcc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 255, 204, 0.05) 0%, transparent 60%),
+                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+        }
+
+        .card-container {
+            width: 500px;
+            background: rgba(10, 16, 30, 0.85);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.1), inset 0 0 15px rgba(0, 255, 204, 0.05);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Terminal Header */
+        .header {
+            background: rgba(0, 255, 204, 0.1);
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .header .buttons span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .btn-close { background: #ff5f56; }
+        .btn-min { background: #ffbd2e; }
+        .btn-max { background: #27c93f; }
+
+        .content {
+            padding: 25px;
+        }
+
+        /* Profile Section */
+        .profile-header {
+            margin-bottom: 20px;
+            border-bottom: 1px dashed rgba(0, 255, 204, 0.4);
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #00ffcc;
+        }
+
+        /* Details Section */
+        .sys-info p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+            display: flex;
+        }
+
+        .sys-info span.key {
+            color: #a8b2c1;
+            width: 140px;
+            flex-shrink: 0;
+        }
+
+        .sys-info span.val {
+            color: #e2e8f0;
+        }
+
+        .highlight {
+            color: #00ffcc !important;
+            font-weight: 600;
+        }
+
+        /* Footer & Animation */
+        .footer {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: #a8b2c1;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: #00ffcc;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* CRT Scanline effect */
+        .card-container::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="header">
+            <div class="buttons">
+                <span class="btn-close"></span>
+                <span class="btn-min"></span>
+                <span class="btn-max"></span>
+            </div>
+            <div>adibetots@sysadmin:~</div>
+        </div>
+
+        <div class="content">
+            <div class="profile-header">
+                <h1>Adib Achmad</h1>
+                <div class="subtitle">> Pelajar & Network Engineer</div>
+            </div>
+
+            <div class="sys-info">
+                <p><span class="key">OS.Active</span> <span class="val">Fedora / CachyOS / Gentoo</span></p>
+                <p><span class="key">Device.Main</span> <span class="val">ThinkPad T14 Gen 1 (Intel i5U)</span></p>
+                <p><span class="key">Device.Node</span> <span class="val">MSI GF63 Thin (Intel i5H)</span></p>
+                <p><span class="key">Net.Infra</span> <span class="val">MikroTik, PCQ, Tailscale</span></p>
+                <p><span class="key">Homelab.Env</span> <span class="val">Proxmox, CasaOS, Debian</span></p>
+                <p><span class="key">Project.Init</span> <span class="val highlight">AchTech Computer</span></p>
+            </div>
+
+            <div class="footer">
+                <span id="typewriter"></span><span class="cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk efek mengetik otomatis (Typewriter)
+        const textArray = [
+            "Initiating connection...",
+            "Loading network routing tables...",
+            "Establishing VPN via Tailscale...",
+            "System Online. Welcome, Admin."
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        const speed = 50; 
+        const delayBetweenTexts = 1500; 
+
+        function typeWriter() {
+            if (charIndex < textArray[textIndex].length) {
+                document.getElementById("typewriter").innerHTML += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(eraseText, delayBetweenTexts);
+            }
+        }
+
+        function eraseText() {
+            if (charIndex > 0) {
+                document.getElementById("typewriter").innerHTML = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseText, speed / 2);
+            } else {
+                textIndex++;
+                if (textIndex >= textArray.length) textIndex = 0;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        // Start animation saat halaman dimuat
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
